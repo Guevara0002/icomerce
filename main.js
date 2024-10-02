@@ -17,5 +17,16 @@ const getData =async () => {
 }
 const  renderTable = (data) => {
     console.log(data);
+    dataTable.innerHTML = '';
+    data.forEach(item =>{
+        const row = `<tr class="border-b">
+        <td class="">${item.name}</td>
+        <td class="">${item.lasName}</td>
+        <td class="">${item.phone}</td>
+        <td class=""><img src="${item.img}" alt=""></td>
+        </tr>`;
+        dataTable.insertAdjacentHTML('beforeend', row);
+    
+    })
 }
-getData 
+getData();
